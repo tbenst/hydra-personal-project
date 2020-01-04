@@ -1,7 +1,7 @@
 { nixpkgs, declInput }:
 let 
   pkgs = import nixpkgs {};
-  helloJson = readFile ./jobsets/hello.json;
+  helloJson = builtins.readFile ./jobsets/hello.json;
 in {
   jobsets = pkgs.runCommand "spec.json" {} ''
     cat <<EOF
